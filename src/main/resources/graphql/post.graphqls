@@ -6,6 +6,15 @@ type Post {
     comments: [Comment]
 }
 
+input PostInput {
+    userId: Float!
+    title: String!
+}
+
 extend type Query {
     posts: [Post]
+}
+
+extend type Mutation {
+    addPost(input: PostInput!): Post!
 }

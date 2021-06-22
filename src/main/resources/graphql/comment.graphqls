@@ -4,6 +4,17 @@ type Comment {
     user: User!
     post: Post!
 }
+
+input CommentInput {
+    title: String!
+    userId: Float!
+    postId: Float!
+}
+
 extend type Query {
     comments: [Comment]
+}
+
+extend type Mutation {
+    addComment(input: CommentInput!): Comment!
 }

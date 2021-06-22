@@ -1,4 +1,4 @@
-package com.example.graphql.graphql;
+package com.example.graphql.graphql.query;
 
 import com.example.graphql.domain.Post;
 import com.example.graphql.domain.PostRepository;

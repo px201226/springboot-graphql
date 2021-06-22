@@ -6,12 +6,21 @@ type User {
     comments: [Comment]
 }
 
+input UserInput {
+    name: String!
+    email: String!
+}
+
 type Query {
     findAllUser : [User]!
     findByUserId(id: Float) : User
 }
 
+type Mutation {
+    addUser(input: UserInput) : User
+}
 
 schema {
-  query: Query
+    query: Query
+    mutation: Mutation
 }
