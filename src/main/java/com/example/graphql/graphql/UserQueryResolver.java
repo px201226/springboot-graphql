@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 
 @RequiredArgsConstructor
@@ -18,9 +19,13 @@ public class UserQueryResolver implements GraphQLQueryResolver {
 
     private final UserRepository userRepository;
 
-    public List<User> userList(){
+    public List<User> findAllUser(){
         System.out.println("userList method call");
         return userRepository.findAll();
+    }
+
+    public Optional<User> findByUserId(Long id){
+        return userRepository.findById(id);
     }
 
 }

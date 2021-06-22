@@ -1,0 +1,11 @@
+
+type Post {
+    id: Float!
+    title: String!
+    user: User!
+    comments: [Comment]
+}
+
+extend type Query {
+    posts: [Post]
+}

@@ -21,7 +21,6 @@ public class UserResolver implements GraphQLResolver<User> {
         return user.getPosts();
     }
 
-
     public List<Comment> comments(User user){
         return user.getComments();
     }
