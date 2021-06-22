@@ -8,11 +8,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Getter
+@Setter
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "user_table")
+@ToString(exclude = {"posts,comments"})
 public class User {
 
     @Id

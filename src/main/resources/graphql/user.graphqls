@@ -3,6 +3,18 @@ type User {
     id: Float!
     name: String!
     email: String!
+    posts: [Post]
+    comments: [Comment]
+}
+
+type Post {
+    id: Float!
+    title: String!
+}
+
+type Comment {
+    id: Float!
+    title: String!
 }
 
 type Query {
