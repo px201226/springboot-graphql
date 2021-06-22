@@ -1,0 +1,10 @@
+
+type User {
+    id: Float!
+    name: String!
+    email: String!
+}
+
+type Query {
+    userList : [User]!
+}
