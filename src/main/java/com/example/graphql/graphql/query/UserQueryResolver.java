@@ -1,9 +1,12 @@
 package com.example.graphql.graphql.query;
 
+import com.example.graphql.domain.Post;
 import com.example.graphql.domain.User;
 import com.example.graphql.domain.UserRepository;
 import graphql.kickstart.tools.GraphQLQueryResolver;
+import graphql.schema.DataFetchingEnvironment;
 import lombok.RequiredArgsConstructor;
+import org.dataloader.DataLoader;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -20,7 +23,6 @@ public class UserQueryResolver implements GraphQLQueryResolver {
     private final UserRepository userRepository;
 
     public List<User> findAllUser(){
-        System.out.println("userList method call");
         return userRepository.findAll();
     }
 
