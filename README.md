@@ -1,42 +1,154 @@
 
-전체 유저 조회 Query
+## Getting Started
+
+### Prerequisties
+
+- Java 1.8
+- Lombok plungins
+
+### Run in development
+
+```java
+# build project
+mvn package
+```
+DB Console
+* http://localhost:8080/h2-console/
+
+Graphql Console
+* http://localhost:8080/graphiql
+
+### Dependencies
+
+|           Dependency           |    Version    |
+| :----------------------------: | :-----------: |
+|          spring-boot           |    2.4.7      |
+|  spring-boot-starter-data-jpa  |               |
+| spring-boot-starter-validation |               |
+|    spring-boot-starter-web     |               |
+|    spring-boot-starter-test    |               |
+|       com.h2database:h2        |               |
+|  graphql-spring-boot-starter   |     11.0      |
+|  graphiql-spring-boot-starter  |     11.0      |
+|      graphql-java-tools        |     11.0      |
+|graphql-spring-boot-starter-test|     11.0      |
+
+
+### Entity Diagram   
+![entity_diagram](docs/entity.PNG)     
+ 
+ 
+### Graphql Schema
+user.graphqls
 ```shell script
-query {
-    userList {
-      id
-      name
-      email
-      posts{
-        id
-        title
-      }
-      comments{
-        title
-      }
-    }
+type User {
+    id: Float!
+    name: String!
+    email: String!
+    posts: [Post]
+    comments: [Comment]
+}
+
+input UserInput {
+    name: String!
+    email: String!
+}
+
+type Query {
+    findAllUser : [User]!
+    findByUserId(id: Float) : User
+}
+
+type Mutation {
+    addUser(input: UserInput) : User
+}
+
+schema {
+    query: Query
+    mutation: Mutation
 }
 ```
 
-전체 유저 조회 응답
+post.graphqls
 ```shell script
+
+type Post {
+    id: Float!
+    title: String!
+    user: User!
+    comments: [Comment]
+}
+
+input PostInput {
+    userId: Float!
+    title: String!
+}
+
+extend type Query {
+    posts: [Post]
+}
+
+extend type Mutation {
+    addPost(input: PostInput!): Post!
+}
+```
+
+comment.graphqls
+```shell script
+type Comment {
+    id: Float!
+    title: String!
+    user: User!
+    post: Post!
+}
+
+input CommentInput {
+    title: String!
+    userId: Float!
+    postId: Float!
+}
+
+extend type Query {
+    comments: [Comment]
+}
+
+extend type Mutation {
+    addComment(input: CommentInput!): Comment!
+}
+```
+ 
+### Examples
+API Endpoint : http://localhost:8080/graphql
+
+* 전체 유저 조회
+```shell script
+## Request body
+query {
+  findAllUser {
+    name
+    posts{
+      title
+    }
+    comments{
+      title
+    }
+  }
+}
+
+## Response body
 {
   "data": {
-    "userList": [
+    "findAllUser": [
       {
-        "id": 1,
         "name": "name1",
-        "email": "email1@naver.com",
         "posts": [
           {
-            "id": 1,
             "title": "포스트1"
           },
           {
-            "id": 2,
             "title": "포스트2"
           },
           {
-            "id": 3,
             "title": "포스트3"
           }
         ],
@@ -52,16 +164,34 @@ query {
           },
           {
             "title": "제목4"
+          },
+          {
+            "title": "gift"
+          },
+          {
+            "title": "gift"
+          },
+          {
+            "title": "gift"
+          },
+          {
+            "title": "gift"
+          },
+          {
+            "title": "gift"
+          },
+          {
+            "title": "gift"
+          },
+          {
+            "title": "gift"
           }
         ]
       },
       {
-        "id": 2,
         "name": "name2",
-        "email": "email2@naver.com",
         "posts": [
           {
-            "id": 4,
             "title": "포스트4"
           }
         ],
@@ -72,12 +202,9 @@ query {
         ]
       },
       {
-        "id": 3,
         "name": "name3",
-        "email": "email3@naver.com",
         "posts": [
           {
-            "id": 5,
             "title": "포스트5"
           }
         ],
@@ -93,5 +220,213 @@ query {
     ]
   }
 }
+```
 
+* 전체 게시물 조회
+```shell script
+## Reqeust Body
+query {
+  posts {
+    title
+    user {
+      name
+    }
+  }
+}
+
+
+## Response Body
+{
+  "data": {
+    "posts": [
+      {
+        "title": "포스트1",
+        "user": {
+          "name": "name1"
+        }
+      },
+      {
+        "title": "포스트2",
+        "user": {
+          "name": "name1"
+        }
+      },
+      {
+        "title": "포스트3",
+        "user": {
+          "name": "name1"
+        }
+      },
+      {
+        "title": "포스트4",
+        "user": {
+          "name": "name2"
+        }
+      },
+      {
+        "title": "포스트5",
+        "user": {
+          "name": "name3"
+        }
+      }
+    ]
+  }
+}
+```
+
+* 전체 댓글 조회
+```shell script
+## Request BOdy
+query {
+  comments {
+    id
+    title
+    user {
+      name
+    }
+  }
+}
+
+## Response Body
+{
+  "data": {
+    "comments": [
+      {
+        "id": 1,
+        "title": "제목1",
+        "user": {
+          "name": "name1"
+        }
+      },
+      {
+        "id": 2,
+        "title": "제목2",
+        "user": {
+          "name": "name1"
+        }
+      },
+      {
+        "id": 3,
+        "title": "제목3",
+        "user": {
+          "name": "name1"
+        }
+      },
+      {
+        "id": 4,
+        "title": "제목4",
+        "user": {
+          "name": "name1"
+        }
+      },
+      {
+        "id": 5,
+        "title": "제목5",
+        "user": {
+          "name": "name2"
+        }
+      },
+      {
+        "id": 6,
+        "title": "제목6",
+        "user": {
+          "name": "name3"
+        }
+      },
+      {
+        "id": 7,
+        "title": "제목7",
+        "user": {
+          "name": "name3"
+        }
+      }
+    ]
+  }
+}
+```
+
+* 유저 추가
+```shell script
+## Request Body
+mutation {
+  addUser(input: {name: "Hong Gil Dong", email: "gildong@mail.com"}){
+    id
+    name
+    email
+  }
+}
+
+## Responose Body
+{
+  "data": {
+    "addUser": {
+      "id": 6,
+      "name": "Hong Gil Dong",
+      "email": "gildong@mail.com"
+    }
+  }
+}
+```
+
+* 게시물 추가
+```shell script
+## Request Body
+mutation {
+  addPost(input: {title: "새로운 개사물을 씁니다", userId: 1}){
+    id
+    title
+    user {
+      name
+    }
+  }
+}
+
+
+## Responose Body
+{
+  "data": {
+    "addPost": {
+      "id": 6,
+      "title": "새로운 개사물을 씁니다",
+      "user": {
+        "name": "name1"
+      }
+    }
+  }
+}
+```
+
+
+* 댓글 추가
+```shell script
+## Request Body
+mutation {
+  addComment(input: {title: "댓글을 씁니다", userId: 1, postId: 1}){
+    id
+    title
+    post{
+      title
+    }
+    user{
+      name
+    }
+  }
+}
+
+
+## Responose Body
+{
+  "data": {
+    "addComment": {
+      "id": 8,
+      "title": "댓글을 씁니다",
+      "post": {
+        "title": "포스트1"
+      },
+      "user": {
+        "name": "name1"
+      }
+    }
+  }
+}
 ```
