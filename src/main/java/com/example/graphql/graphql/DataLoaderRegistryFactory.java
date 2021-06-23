@@ -35,9 +35,8 @@ public class DataLoaderRegistryFactory {
     public DataLoader<Long, List<Post>> createPostListDataLoader() {
         MappedBatchLoader<Long, List<Post>> dataLoader = userId ->
                 CompletableFuture.supplyAsync(() -> {
-                    List<Post> posts = postRepository.findAllById(userId);
-                    Map<Long, List<Post>> groupByUserId = posts.stream().collect(Collectors.groupingBy(u -> u.getId()));
-
+                    List<Post> posts = postRepository.findAll();
+                    Map<Long, List<Post>> groupByUserId = posts.stream().collect(Collectors.groupingBy(p->p.getUserId()));
                     return groupByUserId;
                 });
 
