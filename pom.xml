@@ -64,9 +64,10 @@
 			<version>11.0.0</version>
 			<scope>runtime</scope>
 		</dependency>
+
 		<dependency>
 			<groupId>com.graphql-java-kickstart</groupId>
-			<artifactId>graphql-java-tools</artifactId>
+			<artifactId>playground-spring-boot-starter</artifactId>
 			<version>11.0.0</version>
 		</dependency>
 		<!-- GraphQL test 의존성 설정 -->
