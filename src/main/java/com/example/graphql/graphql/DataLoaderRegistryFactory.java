@@ -1,7 +1,7 @@
 package com.example.graphql.graphql;
 
-import com.example.graphql.domain.Post;
-import com.example.graphql.domain.PostRepository;
+import com.example.graphql.post.Post;
+import com.example.graphql.post.PostRepository;
 import lombok.RequiredArgsConstructor;
 import org.dataloader.DataLoader;
 import org.dataloader.DataLoaderRegistry;

@@ -1,7 +1,10 @@
-package com.example.graphql.domain;
+package com.example.graphql.user;
 
 
+import com.example.graphql.comment.Comment;
+import com.example.graphql.post.Post;
 import lombok.*;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
 import java.util.ArrayList;

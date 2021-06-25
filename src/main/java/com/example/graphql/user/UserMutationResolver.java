@@ -1,10 +1,9 @@
-package com.example.graphql.graphql.mutation;
+package com.example.graphql.user;
 
-import com.example.graphql.domain.User;
-import com.example.graphql.domain.UserRepository;
-import com.example.graphql.domain.input.UserInput;
+import com.example.graphql.user.User;
+import com.example.graphql.user.UserRepository;
+import com.example.graphql.user.UserInput;
 import graphql.kickstart.tools.GraphQLMutationResolver;
-import graphql.schema.DataFetchingEnvironment;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 

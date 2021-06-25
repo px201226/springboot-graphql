@@ -1,8 +1,7 @@
-package com.example.graphql.domain.input;
+package com.example.graphql.user;
 
-import com.example.graphql.domain.User;
+import com.example.graphql.user.User;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 

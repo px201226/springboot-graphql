@@ -1,8 +1,7 @@
-package com.example.graphql.domain.input;
+package com.example.graphql.comment;
 
-import com.example.graphql.domain.Comment;
-import com.example.graphql.domain.Post;
-import com.example.graphql.domain.User;
+import com.example.graphql.post.Post;
+import com.example.graphql.user.User;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

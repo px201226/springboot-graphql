@@ -1,17 +1,18 @@
-package com.example.graphql.graphql;
+package com.example.graphql.user;
 
-import com.example.graphql.domain.*;
+import com.example.graphql.comment.Comment;
+import com.example.graphql.graphql.DataLoaderRegistryFactory;
+import com.example.graphql.post.Post;
+import com.example.graphql.post.PostRepository;
+import com.example.graphql.user.User;
 import graphql.kickstart.tools.GraphQLResolver;
 import graphql.schema.DataFetchingEnvironment;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.dataloader.DataLoader;
-import org.dataloader.DataLoaderRegistry;
 import org.springframework.stereotype.Component;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 
 

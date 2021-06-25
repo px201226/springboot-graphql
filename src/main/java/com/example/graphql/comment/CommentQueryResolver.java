@@ -1,15 +1,12 @@
-package com.example.graphql.graphql.query;
+package com.example.graphql.comment;
 
-import com.example.graphql.domain.Comment;
-import com.example.graphql.domain.CommentRepository;
-import com.example.graphql.domain.User;
-import com.example.graphql.domain.UserRepository;
+import com.example.graphql.comment.Comment;
+import com.example.graphql.comment.CommentRepository;
 import graphql.kickstart.tools.GraphQLQueryResolver;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
-import java.util.Optional;
 
 
 @RequiredArgsConstructor

@@ -1,6 +1,8 @@
-package com.example.graphql.domain;
+package com.example.graphql.post;
 
 
+import com.example.graphql.comment.Comment;
+import com.example.graphql.user.User;
 import lombok.*;
 
 import javax.persistence.*;

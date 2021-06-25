@@ -1,17 +1,12 @@
-package com.example.graphql.graphql.query;
+package com.example.graphql.user;
 
-import com.example.graphql.domain.Post;
-import com.example.graphql.domain.User;
-import com.example.graphql.domain.UserRepository;
+import com.example.graphql.user.User;
+import com.example.graphql.user.UserRepository;
 import graphql.kickstart.tools.GraphQLQueryResolver;
-import graphql.schema.DataFetchingEnvironment;
 import lombok.RequiredArgsConstructor;
-import org.dataloader.DataLoader;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 

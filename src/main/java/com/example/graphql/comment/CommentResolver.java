@@ -1,15 +1,12 @@
-package com.example.graphql.graphql;
+package com.example.graphql.comment;
 
-import com.example.graphql.domain.Comment;
-import com.example.graphql.domain.Post;
-import com.example.graphql.domain.PostRepository;
-import com.example.graphql.domain.User;
+import com.example.graphql.comment.Comment;
+import com.example.graphql.post.Post;
+import com.example.graphql.user.User;
 import graphql.kickstart.tools.GraphQLResolver;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
-
-import java.util.List;
 
 
 @Slf4j
