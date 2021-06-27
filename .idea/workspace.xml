@@ -20,27 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b4d42123-00c0-45d0-8656-923686ad0cc8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/.eslintrc.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/.stylelintrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/babel.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/public/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/public/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/App.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/assets/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/NotFound.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/router/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/scss/style.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/scss/utilities/_variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/store/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/store/modules/user.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/views/Home.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/tests/unit/example.spec.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/vue.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/graphql/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/graphql/security/SecurityConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +60,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/server" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -157,26 +141,26 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="371" y="92" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.689@0.0.1280.689" timestamp="1624263499418" />
-    <state x="421" y="100" key="FileChooserDialogImpl" timestamp="1624603182683">
+    <state x="421" y="100" key="FileChooserDialogImpl" timestamp="1624722928944">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="421" y="100" key="FileChooserDialogImpl/0.0.1280.689@0.0.1280.689" timestamp="1624603182683" />
-    <state width="1237" height="447" key="GridCell.Tab.0.bottom" timestamp="1624603213785">
+    <state x="421" y="100" key="FileChooserDialogImpl/0.0.1280.689@0.0.1280.689" timestamp="1624722928944" />
+    <state width="1237" height="447" key="GridCell.Tab.0.bottom" timestamp="1624722829753">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="447" key="GridCell.Tab.0.bottom/0.0.1280.689@0.0.1280.689" timestamp="1624603213785" />
-    <state width="1237" height="447" key="GridCell.Tab.0.center" timestamp="1624603213785">
+    <state width="1237" height="447" key="GridCell.Tab.0.bottom/0.0.1280.689@0.0.1280.689" timestamp="1624722829753" />
+    <state width="1237" height="447" key="GridCell.Tab.0.center" timestamp="1624722829753">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="447" key="GridCell.Tab.0.center/0.0.1280.689@0.0.1280.689" timestamp="1624603213785" />
-    <state width="1237" height="447" key="GridCell.Tab.0.left" timestamp="1624603213785">
+    <state width="1237" height="447" key="GridCell.Tab.0.center/0.0.1280.689@0.0.1280.689" timestamp="1624722829753" />
+    <state width="1237" height="447" key="GridCell.Tab.0.left" timestamp="1624722829753">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="447" key="GridCell.Tab.0.left/0.0.1280.689@0.0.1280.689" timestamp="1624603213785" />
-    <state width="1237" height="447" key="GridCell.Tab.0.right" timestamp="1624603213785">
+    <state width="1237" height="447" key="GridCell.Tab.0.left/0.0.1280.689@0.0.1280.689" timestamp="1624722829753" />
+    <state width="1237" height="447" key="GridCell.Tab.0.right" timestamp="1624722829753">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="447" key="GridCell.Tab.0.right/0.0.1280.689@0.0.1280.689" timestamp="1624603213785" />
+    <state width="1237" height="447" key="GridCell.Tab.0.right/0.0.1280.689@0.0.1280.689" timestamp="1624722829753" />
     <state x="142" y="0" key="SettingsEditor" timestamp="1624381625811">
       <screen x="0" y="0" width="1280" height="689" />
     </state>

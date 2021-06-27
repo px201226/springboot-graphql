@@ -1,78 +1,65 @@
+/* ## BoardList.vue 내용 */
 <template>
-<div>
-   <v-row
-    align="center"
-    justify="space-around"
-  >
-    <v-btn depressed>
-      Normal
-    </v-btn>
-    <v-btn
-      depressed
-      color="primary"
-    >
-      Primary
-    </v-btn>
-    <v-btn
-      depressed
-      color="error"
-    >
-      Error
-    </v-btn>
-    <v-btn
-      depressed
-      disabled
-    >
-      Disabled
-    </v-btn>
-  </v-row>
-</div>
+  <div class="pa-3">
+    <v-col class="text-right">
+      <v-row>
+        <v-btn block color="primary" @click="openPostWrite">게시글 작성</v-btn>
+        <post-write :open="getIsOpenPostWrite" @close="closePostWrite" />
+      </v-row>
+
+      {{ findAllUser }}
+      <v-row>
+        <v-col>
+          <post-item > </post-item>
+        </v-col>
+      </v-row>
+    </v-col>
+  </div>
 </template>
 
 <script>
-import gql from 'graphql-tag'
-import pjson from '../../package.json'
+import PostItem from "../components/PostItem.vue";
+import PostWrite from "./PostWrite.vue";
+import gql from "graphql-tag";
+import pjson from "../../package.json";
 
 export default {
-  name: 'Home',
+  name: "Home",
+  components: { PostItem, PostWrite },
+
   data() {
     return {
-      pjson,
-    }
+      isOpenPostWrite: false,
+    };
   },
   apollo: {
-    // Simple query that will update the 'hello' vue property
-    hello: gql`query {
-      hello
-    }`,
+    findAllUser: gql`
+      query {
+        findAllUser {
+          name
+        }
+      }
+    `,
   },
-  methods: {
-    async addTag() {
-      // Call to the graphql mutation
-      const result = await this.$apollo.mutate({
-        // Query
-        mutation: gql`mutation ($label: String!) {
-          addTag(label: $label) {
-            id
-            label
-          }
-        }`,
-        // Parameters
-        variables: {
-          label: this.newTag,
-        },
-      })
-    }
-  }
-}
-</script>
+  created() {},
 
-<style lang="scss">
-#Home {
-  .logo {
-    max-width: 400px;
-    margin: 30px 0;
-    background: #C32424;
-  }
-}
-</style>
+  computed: {
+    getIsOpenPostWrite() {
+      return this.isOpenPostWrite;
+    },
+
+  },
+
+  methods: {
+    openPostWrite() {
+      this.isOpenPostWrite = true;
+    },
+
+    closePostWrite() {
+      this.isOpenPostWrite = false;
+    },
+
+
+  },
+};
+</script>
