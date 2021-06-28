@@ -1,6 +1,6 @@
 <template>
   <v-card class="pa-2" contextmenu="" flat outlined>
-    <v-row row>
+    <v-row row class="my-1">
       <v-col class="flex-grow-0 flex-shrink-0">
         <v-avatar size="36px">
           <img src="@/assets/no_profile.gif" alt="John" />
@@ -17,29 +17,24 @@
           <div class="font-weight-light">{{ date }}</div>
         </v-row>
       </v-col>
-      <div class="mr-2">
-        <v-btn class="ml-auto" icon>
-          <v-icon>mdi-pencil</v-icon>
-        </v-btn>
-        <v-btn class="ml-auto" icon>
-          <v-icon>mdi-delete</v-icon>
-        </v-btn>
-      </div>
     </v-row>
 
-    <div class="font-weight-regular ml-4 mt-3 mb-6">
+<v-row>
+    <div class="font-weight-regular mx-4 my-2">
       {{ content }}
     </div>
+</v-row>
 
     <v-card-actions>
-      <v-btn icon>
-        <v-icon>mdi-heart</v-icon>
-      </v-btn>
       <v-btn text color="" class="ml-auto" @click="openCommentView">
-        좋아요 {{ mlikes }}개 | 댓글 {{ comments }}개
+        댓글 {{ comments }}개
       </v-btn>
     </v-card-actions>
-    <CommentView :open="getIsOpenPostView" :postid="getIsPostId"  @close="closeCommentView" />
+    <CommentView
+      :open="getIsOpenPostView"
+      :postid="getIsPostId"
+      @close="closeCommentView"
+    />
   </v-card>
 </template>
 
@@ -71,7 +66,7 @@ export default {
   },
 
   computed: {
-    getIsPostId(){
+    getIsPostId() {
       return this.id;
     },
     getIsOpenPostView() {
