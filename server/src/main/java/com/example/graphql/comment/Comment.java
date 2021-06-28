@@ -7,6 +7,7 @@ import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -29,6 +30,7 @@ public class Comment {
 
     @CreatedDate
     @Setter
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     protected LocalDateTime createDateTime; // 등록일시
 
     @ManyToOne(fetch = FetchType.LAZY)

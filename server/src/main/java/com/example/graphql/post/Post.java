@@ -7,11 +7,14 @@ import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -31,6 +34,7 @@ public class Post {
 
     @CreatedDate
     @Setter
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     protected LocalDateTime createDateTime; // 등록일시
 
     @Column(name="user_id", insertable=false, updatable=false)
@@ -41,6 +45,6 @@ public class Post {
     private User user;
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "post")
-    private List<Comment> comments = new ArrayList<Comment>();
+    private List<Comment> comments = new ArrayList<>();
 
 }

@@ -40,6 +40,7 @@ public class PostQueryResolver implements GraphQLQueryResolver {
 
     private Specification fetchComments(){
         return ((root, query, criteriaBuilder) -> {
+            query.distinct(true);
             Fetch f = root.fetch("comments", JoinType.LEFT);
             Join join = (Join) f;
             return join.getOn();

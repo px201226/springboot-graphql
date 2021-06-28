@@ -21,25 +21,16 @@
   <component name="ChangeListManager">
     <list default="true" id="b4d42123-00c0-45d0-8656-923686ad0cc8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/AppBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/AppBar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/PostItem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/PostItem.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/CommentView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/CommentView.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/Home.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/PostWrite.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/PostWrite.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/graphql/GraphqlApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/graphql/GraphqlApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/graphql/comment/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/graphql/comment/Comment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/graphql/post/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/graphql/post/Post.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/graphql/post/PostQueryResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/graphql/post/PostQueryResolver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/graphql/post/PostRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/graphql/post/PostRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/graphql/post/PostResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/graphql/post/PostResolver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/graphql/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/graphql/user/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/graphql/user/UserMutationResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/graphql/user/UserMutationResolver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/example/graphql/user/UserQueryResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/example/graphql/user/UserQueryResolver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/resources/data.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/resources/graphql/comment.graphqls" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/resources/graphql/comment.graphqls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/resources/graphql/post.graphqls" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/resources/graphql/post.graphqls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/resources/graphql/user.graphqls" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/resources/graphql/user.graphqls" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

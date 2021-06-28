@@ -17,7 +17,6 @@ input LoginInput {
     password: String!
 }
 
-
 type Query {
     findAllUser : [User]!
     findByUserId(id: Float) : User
