@@ -1,5 +1,16 @@
 
 ## Getting Started
+Springboot + GraphQL + Vue 를 사용한 게시판 샘플 프로젝트(인증 및 인가, JPA N+1)
+
+### Skills
+- Spring Boot 2
+- Spring Data JPA
+- Spring Security
+- GraphQL-Java
+- Vue
+- Vue Router
+- Vue Apollo
+- Vuetify
 
 ### Prerequisties
 
@@ -32,19 +43,22 @@ Graphql Console
 |  graphiql-spring-boot-starter  |     11.0      |
 |      graphql-java-tools        |     11.0      |
 |graphql-spring-boot-starter-test|     11.0      |
-
+|voyager-spring-boot-starter     |     11.0      |
 
 ### Entity Diagram   
 ![entity_diagram](docs/entity.PNG)     
  
  
 ### Graphql Schema
+![schema_diagram](docs/schema.PNG)     
+
 user.graphqls
 ```shell script
 type User {
     id: Float!
     name: String!
     email: String!
+    createDateTime: String!
     posts: [Post]
     comments: [Comment]
 }
@@ -54,6 +68,11 @@ input UserInput {
     email: String!
 }
 
+input LoginInput {
+    name: String!
+    password: String!
+}
+
 type Query {
     findAllUser : [User]!
     findByUserId(id: Float) : User
@@ -61,6 +80,7 @@ type Query {
 
 type Mutation {
     addUser(input: UserInput) : User
+    login(name: String!, password: String!) : String!
 }
 
 schema {
@@ -75,6 +95,7 @@ post.graphqls
 type Post {
     id: Float!
     title: String!
+    createDateTime: String!
     user: User!
     comments: [Comment]
 }
@@ -86,6 +107,7 @@ input PostInput {
 
 extend type Query {
     posts: [Post]
+    findByPostId(postId: Float!): Post
 }
 
 extend type Mutation {
@@ -99,6 +121,7 @@ type Comment {
     id: Float!
     title: String!
     user: User!
+    createDateTime: String!
     post: Post!
 }
 
@@ -430,3 +453,8 @@ mutation {
   }
 }
 ```
+
+### Screenshot
+![home](docs/home.PNG)    
+
+![comment](docs/comment.PNG)    
