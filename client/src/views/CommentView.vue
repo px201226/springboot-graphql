@@ -25,36 +25,68 @@
         <v-btn class="mx-1 " height="55" depressed color="primary">작성</v-btn>
       </v-row>
       <v-divider />
+  
 
-      <!-- <comment
-        v-for="(comment, index) in getCommentList"
+      <comment
+        v-for="(comment, index) in findByPostId.comments"
         :key="index"
-        :postId="postId"
+        :postId="postid"
         :commentId="comment.id"
-        :nickName="comment.userNickName"
-        :content="comment.content"
-        :date="comment.modifyDate"
+        :nickName="comment.user.name"
+        :content="comment.title"
+        :date="comment.createDateTime"
         :isLike="comment.isLike"
         :isWriter="comment.isWriter"
         class="my-1"
-      /> -->
+      />
     </v-card>
   </v-dialog>
 </template>
 
 <script>
+import gql from "graphql-tag";
+import pjson from "../../package.json";
 import Comment from "../components/Comment.vue";
 
 export default {
   components: { Comment },
   name: "CommentView",
-  props: ["open"],
+  props: ["open", "postid"],
   data() {
-    return {};
+    return {
+
+    };
   },
+  apollo: {
+    findByPostId: {
+      query: gql`
+        query findByPostId($postId: Float!) {
+          findByPostId(postId: $postId) {
+            title
+            comments{
+              id
+              title
+              createDateTime
+              user{
+                name
+              }
+            }
+          }
+        }
+      `,
+      variables() {
+        return {
+          postId: this.postid,
+        };
+      },
+    },
+  },
+
   mounted() {},
 
-  created() {},
+  created() {
+  
+  },
 
   destroyed() {},
 
@@ -62,6 +94,13 @@ export default {
     isOpen: {
       get() {
         return this.open;
+      },
+      set() {},
+    },
+
+    getPostId: {
+      get() {
+        return this.postId;
       },
       set() {},
     },

@@ -19,7 +19,7 @@
           <img src="@/assets/no_profile.gif" alt="John" />
         </v-avatar>
         <div class="mx-2 text--primary font-weight-bold">
-          dddd
+          
         </div>
       </div>
 

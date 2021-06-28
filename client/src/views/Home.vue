@@ -7,10 +7,25 @@
         <post-write :open="getIsOpenPostWrite" @close="closePostWrite" />
       </v-row>
 
-      {{ findAllUser }}
       <v-row>
         <v-col>
-          <post-item > </post-item>
+          <div id="posts">
+      <post-item
+        v-for="(post, index) in posts"
+        :key="index"
+        :id="post.id"
+        :nickName="post.user.name"
+        :content="post.title"
+        :date="post.createDateTime"
+        :likes="post.likes"
+        :isLike="post.isLike"
+        :comments="post.comments.length"
+        :isWriter="post.isWriter"
+        class="my-3"
+      >
+      </post-item>
+    </div>
+
         </v-col>
       </v-row>
     </v-col>
@@ -33,10 +48,18 @@ export default {
     };
   },
   apollo: {
-    findAllUser: gql`
+    posts: gql`
       query {
-        findAllUser {
-          name
+        posts {
+          id
+          title
+          createDateTime
+          user{
+            name
+          }
+          comments{
+            id
+          }
         }
       }
     `,

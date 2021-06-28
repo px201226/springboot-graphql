@@ -39,7 +39,7 @@
         좋아요 {{ mlikes }}개 | 댓글 {{ comments }}개
       </v-btn>
     </v-card-actions>
-    <CommentView :open="getIsOpenPostView"  @close="closeCommentView" />
+    <CommentView :open="getIsOpenPostView" :postid="getIsPostId"  @close="closeCommentView" />
   </v-card>
 </template>
 
@@ -71,6 +71,9 @@ export default {
   },
 
   computed: {
+    getIsPostId(){
+      return this.id;
+    },
     getIsOpenPostView() {
       return this.isOpenCommentView;
     },

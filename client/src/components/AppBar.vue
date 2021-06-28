@@ -6,19 +6,18 @@
 
     <v-spacer></v-spacer>
 
-    <div v-if="!isLogin">
-       <v-btn target="_blank" text>
+    <div v-if="isLogin">
+      <v-btn target="_blank" text @click="onLogoutClick">
         로그아웃
       </v-btn>
     </div>
-    
+
     <div v-if="!isLogin">
-      <v-btn target="_blank" text >
+      <v-btn target="_blank" text @click="onLoginClick">
         로그인
         <v-icon>mdi-login</v-icon>
       </v-btn>
     </div>
-
   </v-app-bar>
 </template>
 
@@ -26,16 +25,28 @@
 export default {
   name: "AppBar",
   components: {},
-
-  created() {},
-  computed: {
+  data(){
+    return {
+      login: sessionStorage.getItem('accessKey')
+    }
+  },
+  created() {
+    console.log("create")
+  },
+  watch: {
     isLogin() {
-      return this.$store.getters.GET_IS_LOGIN;
+      return this.login;
     },
   },
   methods: {
+    onLoginClick() {
+      this.$router.push("/login");
+    },
 
-   
+    onLogoutClick() {
+      sessionStorage.setItem('accesskey','');
+      this.login = '';
+    },
   },
 };
 </script>
