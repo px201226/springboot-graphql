@@ -2,6 +2,7 @@ type Comment {
     id: Float!
     title: String!
     user: User!
+    createDateTime: String!
     post: Post!
 }
 

@@ -4,14 +4,19 @@ package com.example.graphql.comment;
 import com.example.graphql.post.Post;
 import com.example.graphql.user.User;
 import lombok.*;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Getter
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@EntityListeners(AuditingEntityListener.class)
 @ToString(exclude = {"user,post"})
 public class Comment {
 
@@ -22,11 +27,15 @@ public class Comment {
 
     private String title;
 
-    @ManyToOne
+    @CreatedDate
+    @Setter
+    protected LocalDateTime createDateTime; // 등록일시
+
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "post_id")
     private Post post;
 }

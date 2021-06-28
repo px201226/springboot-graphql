@@ -2,6 +2,7 @@ type User {
     id: Float!
     name: String!
     email: String!
+    createDateTime: String!
     posts: [Post]
     comments: [Comment]
 }
@@ -11,6 +12,12 @@ input UserInput {
     email: String!
 }
 
+input LoginInput {
+    name: String!
+    password: String!
+}
+
+
 type Query {
     findAllUser : [User]!
     findByUserId(id: Float) : User
@@ -18,6 +25,7 @@ type Query {
 
 type Mutation {
     addUser(input: UserInput) : User
+    login(name: String!, password: String!) : String!
 }
 
 schema {

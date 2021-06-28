@@ -2,6 +2,7 @@
 type Post {
     id: Float!
     title: String!
+    createDateTime: String!
     user: User!
     comments: [Comment]
 }
@@ -13,6 +14,7 @@ input PostInput {
 
 extend type Query {
     posts: [Post]
+    findByPostId(postId: Float!): Post
 }
 
 extend type Mutation {
